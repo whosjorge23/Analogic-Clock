@@ -18,12 +18,27 @@ struct ContentView: View {
             Text("Analogic Clock")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .foregroundColor(.white)
             
             Spacer(minLength: 0)
             
+            Text(Locale.current.localizedString(forRegionCode: Locale.current.regionCode!) ?? "")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding()
+            
+            Text(getDate())
+                .font(.system(size: 45))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.bottom)
+            
             ZStack{
-                Circle()
+                RoundedRectangle(cornerRadius: 60.0)
                     .fill(Color("bg"))
+//                Circle()
+//                    .fill(Color("bg"))
                 
                 Circle()
                     .fill(Color("bg2"))
@@ -38,7 +53,7 @@ struct ContentView: View {
                     Rectangle()
                         .fill(Color("dots"))
                         //60 / 12 = 5
-                        .frame(width: 2, height: (i % 5) == 0 ? 15 : 5)
+                        .frame(width: 3, height: (i % 5) == 0 ? 15 : 5)
                         .offset(y: (width - 110) / 2)
                         .rotationEffect(.init(degrees: Double(i) * 6))
                 }
@@ -49,7 +64,9 @@ struct ContentView: View {
 //                    .frame(width: 2, height: (width - 180) / 2)
 //                    .offset(y: -(width - 180) / 4)
 //                    .rotationEffect(.init(degrees: Double(currentTime.sec) * 6))
-                Image("sec")
+//
+//
+                SecondStickView()
                     .frame(width: 2, height: (width - 180) / 2)
                     .offset(y: -(width - 180) / 4)
                     .rotationEffect(.init(degrees: Double(currentTime.sec) * 6))
@@ -60,7 +77,8 @@ struct ContentView: View {
 //                    .frame(width: 4, height: (width - 200) / 2)
 //                    .offset(y: -(width - 200) / 4)
 //                    .rotationEffect(.init(degrees: Double(currentTime.min) * 6))
-                Image("min")
+//
+                MinuteStickView()
                     .frame(width: 4, height: (width - 200) / 2)
                     .offset(y: -(width - 200) / 4)
                     .rotationEffect(.init(degrees: Double(currentTime.min) * 6))
@@ -72,23 +90,38 @@ struct ContentView: View {
 //                    .frame(width: 4.5, height: (width - 240) / 2)
 //                    .offset(y: -(width - 240) / 4)
 //                    .rotationEffect(.init(degrees: Double(currentTime.hour) * 30))
-                Image("hour")
+//
+                HourStickView()
                     .frame(width: 4.5, height: (width - 240) / 2)
-                    .offset(y: -(width - 240) / 4)
+                    .offset(y: -(width - 280) / 4)
                     .rotationEffect(.init(degrees: Double(currentTime.hour) * 30))
                 
                 //Center Circle
 //                Circle()
 //                    .fill(Color(.orange))
 //                    .frame(width: 15, height: 15)
-                Image("circle")
-                    .resizable()
-                    .frame(width: 15, height: 15)
+                
+                InsideCircle()
+                    .frame(width: 20, height: 20)
             }
             .frame(width: width - 80, height: width - 80)
             
+            
+            
+            Text(getTime())
+                .font(.system(size: 45))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.top)
+            
+            
             Spacer(minLength: 0)
         })
+        .padding(.horizontal,50)
+        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+        .background(Color("mainBG"))
+        .ignoresSafeArea(.all)
+        
         .onAppear(perform: {
             let calender = Calendar.current
             
@@ -112,6 +145,18 @@ struct ContentView: View {
                 self.currentTime = Time(min: min, sec: sec, hour: hour)
             }
         })
+    }
+    func getTime() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "hh:mm:ss a"
+        
+        return format.string(from: Date())
+    }
+    func getDate() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "dd MMM yyyy"
+        
+        return format.string(from: Date())
     }
 }
 

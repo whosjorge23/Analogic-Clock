@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDC8DA1826526CDD0017EFA6 /* MinuteStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8DA1726526CDD0017EFA6 /* MinuteStickView.swift */; };
+		EDC8DA1B26526D8E0017EFA6 /* SecondStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8DA1A26526D8E0017EFA6 /* SecondStickView.swift */; };
+		EDC8DA1E265270220017EFA6 /* InsideCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8DA1D265270220017EFA6 /* InsideCircle.swift */; };
 		EDDF992D26512D45007D2E0F /* Analogic_ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF992C26512D45007D2E0F /* Analogic_ClockApp.swift */; };
 		EDDF992F26512D45007D2E0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF992E26512D45007D2E0F /* ContentView.swift */; };
 		EDDF993126512D47007D2E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDF993026512D47007D2E0F /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EDC8DA1726526CDD0017EFA6 /* MinuteStickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinuteStickView.swift; sourceTree = "<group>"; };
+		EDC8DA1A26526D8E0017EFA6 /* SecondStickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondStickView.swift; sourceTree = "<group>"; };
+		EDC8DA1D265270220017EFA6 /* InsideCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCircle.swift; sourceTree = "<group>"; };
 		EDDF992926512D45007D2E0F /* Analogic Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Analogic Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDF992C26512D45007D2E0F /* Analogic_ClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analogic_ClockApp.swift; sourceTree = "<group>"; };
 		EDDF992E26512D45007D2E0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +63,9 @@
 				EDDF992C26512D45007D2E0F /* Analogic_ClockApp.swift */,
 				EDDF992E26512D45007D2E0F /* ContentView.swift */,
 				EDDF993C26514E9F007D2E0F /* HourStickView.swift */,
+				EDC8DA1726526CDD0017EFA6 /* MinuteStickView.swift */,
+				EDC8DA1A26526D8E0017EFA6 /* SecondStickView.swift */,
+				EDC8DA1D265270220017EFA6 /* InsideCircle.swift */,
 				EDDF993026512D47007D2E0F /* Assets.xcassets */,
 				EDDF993526512D47007D2E0F /* Info.plist */,
 				EDDF993226512D47007D2E0F /* Preview Content */,
@@ -144,6 +153,9 @@
 				EDDF992F26512D45007D2E0F /* ContentView.swift in Sources */,
 				EDDF993D26514E9F007D2E0F /* HourStickView.swift in Sources */,
 				EDDF992D26512D45007D2E0F /* Analogic_ClockApp.swift in Sources */,
+				EDC8DA1E265270220017EFA6 /* InsideCircle.swift in Sources */,
+				EDC8DA1826526CDD0017EFA6 /* MinuteStickView.swift in Sources */,
+				EDC8DA1B26526D8E0017EFA6 /* SecondStickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
