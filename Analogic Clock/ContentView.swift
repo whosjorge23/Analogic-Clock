@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 0, content: {
-            Text("Analogic Clock")
+            Text("Analogic Clock UI")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
